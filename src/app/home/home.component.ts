@@ -31,7 +31,8 @@ export class HomeComponent implements OnInit {
   getTheatreMovies() {
     this.http
       .get('http://localhost:4200/assets/data/theatre-movies.json')
-      .subscribe((movies) => {
+      .subscribe((data => console.log(data),
+  error => console.error(error)) => {
         this.theatreMovies = movies;
       });
   }
